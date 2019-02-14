@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+
+	<!-- 配置404界面 -->
+    <!--<error-page>
+    	<error-code>404</error-code>
+    	<location>/404.jsp</location>
+    </error-page>
+	-->
+	<!-- 拦截每个jsp,为每个jsp配置一个jsp依赖的库 -->
+	<jsp-config>
+		<jsp-property-group>
+		    <!-- 拦截所有的jsp请求 -->
+			<url-pattern>*.jsp</url-pattern>
+			<!-- 可以使用el表达式 -->
+			<el-ignored>false</el-ignored>
+			<!-- 使jsp脚本失效  -->
+			<scripting-invalid>true</scripting-invalid>
+			<!-- 为每个jsp导入一个标签库  -->
+			<include-prelude>main/webapp/WEB-INF/taglib.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+	
+
+
+	<display-name>oa</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
